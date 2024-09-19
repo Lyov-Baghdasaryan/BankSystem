@@ -1,5 +1,6 @@
 #ifndef SavingsAccount_H
 #define SavingsAccount_H
+#include "Account.h"
 #include <iostream>
 
 class SavingsAccount : public Account
@@ -16,6 +17,6 @@ class SavingsAccount : public Account
 		~SavingsAccount() = default;
 	private:
 		double interestRate;
-}
+};
 
 #endif

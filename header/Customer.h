@@ -1,6 +1,6 @@
 #ifndef Customer_H
 #define Customer_H
-#include "account.h"
+#include "Account.h"
 
 class SavingsAccount : public Account
 {

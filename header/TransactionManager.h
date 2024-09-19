@@ -1,5 +1,6 @@
 #ifndef TransactionManager_H
 #define TransactionManager_H
+#include <iostream>
 
 class  TransactionManager
 {

@@ -2,7 +2,7 @@
 #define Account_H
 #include <iostream>
 #include <vector>
-//#include "Transaction.h"
+#include "Transaction.h"
 
 class Account
 {	
@@ -16,12 +16,15 @@ class Account
 		virtual void transfer(Account& destionation, double amount) = 0;
 		virtual void showBalance() const = 0;
 		virtual std::string getAccountType() const = 0;
+		void setBalance(double value);
+		double getBalance() const;
 		virtual ~Account();
+		
 	protected:
-		int accountNumber;
-		double balance;
-		std::string accountType;
-		std::vector<Transaction*> accountTransaction;
+		int m_accountNumber;
+		double m_balance;
+		std::string m_accountType;
+		std::vector<Transaction*> m_accountTransaction;
 		//Customer* accountOwner;
 };
 

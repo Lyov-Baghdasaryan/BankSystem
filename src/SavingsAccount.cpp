@@ -1,17 +1,17 @@
-#include "SavingsAccount.h"
+#include "../header/SavingsAccount.h"
 
 SavingsAccount::SavingsAccount() : interestRate(5){
 	accountType = "Savings-Account"; 
 }
 
-void SavingsAccount::deposit(double amount) override{
+void SavingsAccount::deposit(double amount){
 	if(amount > 0){
 		balance += amount;
 		std::cout << "You take " << amount << "$ deposit from Bank successfully" << std::endl;
 	}
 }
 
-void SavingsAccount::withdraw(double amount) override{
+void SavingsAccount::withdrow(double amount){
 	if(amount <= balance){
 		balance -= amount;
 		std::cout << "You withdraw from balance successfully" << std::endl;
@@ -20,18 +20,18 @@ void SavingsAccount::withdraw(double amount) override{
 	}
 }
 
-void SavingsAccount::transfer(Account& destionation, double amount){
+void SavingsAccount::transfer(Account& destination, double amount){
 	if(amount > 0 && amount <= balance){
-		destination.balance += amount;
+		destination.setBalance(destination.getBalance() + amount);
 		balance -= amount;
 	}
 }
 
-void SavingsAccount::showBalance() const override{
+void SavingsAccount::showBalance() const{
 	std::cout << "Balance -> " << balance << std::endl;
 }
 
-std::string SavingsAccount::getAccountType() const override{
+std::string SavingsAccount::getAccountType() const{
 	return accountType;
 }
 
