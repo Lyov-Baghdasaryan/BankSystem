@@ -5,8 +5,10 @@
 class  TransactionManager
 {
 	public:
-		virtual void logTransaction(const std::string& type, double amount) = 0;
+		// virtual void logTransaction(const std::string& type, double amount) = 0;
 		virtual void showTransactionHistory() const = 0;
+		virtual void logTransaction(const std::string& type, double amount, Account* toAccount) = 0;
+
 };
 
 #endif

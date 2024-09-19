@@ -38,5 +38,6 @@ std::string SavingsAccount::getAccountType() const{
 void SavingsAccount::setInterestRate(double value){
 	if(value > 0){
 		interestRate = value;
+		m_balance += (m_balance/100) * interestRate;
 	}
 }

@@ -80,12 +80,14 @@ void CheckingAccount::showTransactionHistory() const{
 	}
 }
 
-void CheckingAccount::logTransaction(const std::string& type, double amount){
-	for(int i = 0; i < m_accountTransaction.size(); i++){
-		if(m_accountTransaction[i]->getType() == type && m_accountTransaction[i]->getAmount() == amount){
-			m_accountTransaction[i]->log();
-		}
-	}
-	std::cout << " ";
+void CheckingAccount::logTransaction(const std::string& type, double amount, Account* toAccount){
+	// for(int i = 0; i < m_accountTransaction.size(); i++){
+	// 	if(m_accountTransaction[i]->getType() == type && m_accountTransaction[i]->getAmount() == amount){
+	// 		m_accountTransaction[i]->log();
+	// 	}
+	// }
+	// std::cout << " ";
+	Transaction* ptr = new Transaction(this, toAccount, amount, "Deposit");
+	m_accountTransaction.push_back(ptr);
 	return;
 }
